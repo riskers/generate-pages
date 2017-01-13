@@ -14,7 +14,7 @@ for (chunk in map) {
 	entry[chunk] = map[chunk].src
 	plugins.push(new HtmlWebpackPlugin({
 		filename: ROOT + '/pages/views/' + map[chunk].tpl + '.html',
-		template: './pages/tpl/' + map[chunk].tpl + '.tpl.html',
+		template: './pages/tpl/' + map[chunk].tpl + '.html',
 		chunks: ['vendor', chunk]
 	}))
 }
