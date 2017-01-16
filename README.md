@@ -86,3 +86,5 @@ import common from 'src/common' // 引入common模块
     * `filename` 设置为 `[name].[md5].js` 可能是你想要的
     * `publicPath` 如果你的 js、css 需要放在 CDN 上，就要修改这个选项了
 * 如果你要使用 less / sass / postcss ，需要自己安装对应的 loader
+
+> Have fun in webpack !
