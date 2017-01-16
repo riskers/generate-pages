@@ -5,6 +5,7 @@ var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var map = require('./map')
 var ROOT = path.resolve(__dirname)
+var ENV = process.env.ENV
 
 var entry = {
 		'vendor': [
@@ -23,8 +24,12 @@ for (chunk in map) {
 	}))
 }
 
+if(ENV == 'PRO') {
+	plugins.push(new webpack.optimize.UglifyJsPlugin({minimize: true}))	
+}
+
 module.exports = {
-	devtool: 'cheap-eval-source-map',
+	devtool: ENV=='PRO' ? 'source-map' : 'cheap-eval-source-map',
 	entry: entry,
 	output: {
 		filename: '[name].js',
