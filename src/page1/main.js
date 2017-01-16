@@ -1,6 +1,6 @@
-/*if(ENV == 'DEV') {
-	require('tpl/page1.tpl.html')	
-}*/
+if(ENV == 'DEV') {
+	require('pages/views/page1.html')
+}
 
 import style from './style.css'
 

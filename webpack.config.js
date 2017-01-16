@@ -1,18 +1,22 @@
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var map = require('./map')
 var ROOT = path.resolve(__dirname)
 
 var entry = {
-		'vendor': ['jquery']
+		'vendor': [
+			'jquery'
+		]
 	},
 	plugins = []
 
 for (chunk in map) {
 	entry[chunk] = map[chunk].src
 	plugins.push(new HtmlWebpackPlugin({
+		alwaysWriteToDisk: true,
 		filename: ROOT + '/pages/views/' + map[chunk].tpl + '.html',
 		template: './pages/tpl/' + map[chunk].tpl + '.html',
 		chunks: ['vendor', chunk]
@@ -20,6 +24,7 @@ for (chunk in map) {
 }
 
 module.exports = {
+	devtool: 'cheap-eval-source-map',
 	entry: entry,
 	output: {
 		filename: '[name].js',
@@ -30,7 +35,7 @@ module.exports = {
 		alias: {
 			'src': path.resolve(__dirname,'src'),
 			'common': 'src/common',
-			'tpl': path.resolve(__dirname,'pages/tpl')
+			'pages': path.resolve(__dirname,'pages')
 		}
 	},
 	module: {
@@ -51,6 +56,7 @@ module.exports = {
 		]
 	},
 	plugins: plugins.concat([
+		new HtmlWebpackHarddiskPlugin(),
 		new webpack.DefinePlugin({
 			'ENV': JSON.stringify(process.env.ENV)
 		}),
