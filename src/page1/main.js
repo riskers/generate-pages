@@ -2,7 +2,8 @@ if(ENV == 'DEV') {
 	require('pages/views/page1.html')
 }
 
-import style from './style.css'
+import 'src/common/base.css'
+import './style.css'
 import * as d3 from 'd3'
 
 console.log(d3)
