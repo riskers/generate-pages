@@ -9,5 +9,9 @@ module.exports = {
 	'page2/main': {
 		"src": ROOT + '/src/page2/main',
 		"tpl": "page2"
+	},
+	'page3/main': {
+		"src": ROOT + '/src/page3/main',
+		"tpl": "page3"		
 	}
 }

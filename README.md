@@ -69,10 +69,16 @@ module.exports = {
 if(ENV == 'DEV') {
     require('pages/views/page1.html')
 }
-
+[使用ProvidePlugin](./src/page3/main.js)
 import style from './style.css' // 引入css
 import common from 'src/common' // 引入common模块
 ```
+
+## 示例
+
+* [使用externals](./src/page1/main.js)
+* [使用公共模块](./src/page2/main.js)
+* [使用ProvidePlugin](./src/page3/main.js)
 
 ## tips
 
