@@ -24,8 +24,8 @@ npm install
 |       |       |--- page1.html
 |       |       |--- page2.html
 |       |--- views // 添加css、js后的页面模板
-|       |       |--- page1.html
-|       |       |--- page2.html
+|               |--- page1.html
+|               |--- page2.html
 |--- src // 页面css、js
 |       |--- common // 公共模块
 |       |       |--- index.js
@@ -33,8 +33,8 @@ npm install
 |       |       |--- main.js
 |       |       |--- style.css
 |       |--- page2
-|       |       |--- main.js
-|       |       |--- style.css
+|               |--- main.js
+|               |--- style.css
 |--- map.js // 页面对应js模块映射
 |--- .babelrc // babel 配置文件
 |--- webpack.config.js // webpack 配置文件
