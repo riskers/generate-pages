@@ -26,6 +26,8 @@ for (chunk in map) {
 
 if(ENV == 'PRO') {
 	plugins.push(new webpack.optimize.UglifyJsPlugin({minimize: true}))	
+}else {
+	plugins.push(new HtmlWebpackHarddiskPlugin())
 }
 
 module.exports = {
@@ -41,6 +43,9 @@ module.exports = {
 			'src': path.resolve(__dirname,'src'),
 			'pages': path.resolve(__dirname,'pages')
 		}
+	},
+	externals: {
+		'd3': 'window.d3'
 	},
 	module: {
 		loaders: [
@@ -60,7 +65,6 @@ module.exports = {
 		]
 	},
 	plugins: plugins.concat([
-		new HtmlWebpackHarddiskPlugin(),
 		new webpack.DefinePlugin({
 			'ENV': JSON.stringify(process.env.ENV)
 		}),
