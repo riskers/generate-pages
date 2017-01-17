@@ -66,7 +66,7 @@ module.exports = {
 				exclude: /node_modules/
 			},
 			{
-				test: /\.html$/,
+				test: /(\.html|\.php)$/,
       			loader: "raw-loader"
 			}
 		]

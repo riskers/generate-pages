@@ -77,6 +77,7 @@ import common from 'src/common' // 引入common模块
 * [使用externals](./src/page1/main.js)
 * [使用公共模块](./src/page2/main.js)
 * [使用ProvidePlugin](./src/page3/main.js)
+* [使用webpack-dev-server的代理](./src/page4/main.js)
 
 ## tips
 
