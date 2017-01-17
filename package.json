@@ -1,4 +1,18 @@
 {
+  "name": "generate-pages",
+  "version": "0.1.0",
+  "description": "多页面脚手架",
+  "aythor": "riskers",
+  "bugs": {
+    "url": "https://github.com/fe-config/generate-pages/issues"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/fe-config/generate-pages",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fe-config/generate-pages.git"
+  },
+  "keywords": ["webpack", "generate-pages"],
   "scripts": {
     "dev": "cross-env ENV=DEV webpack-dev-server --inline --hot --quiet --progress --content-base pages/views  --host 0.0.0.0 --port 4545 --open",
     "build": "cross-env ENV=PRO webpack"

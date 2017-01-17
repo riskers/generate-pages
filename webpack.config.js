@@ -18,8 +18,8 @@ for (chunk in map) {
 	entry[chunk] = map[chunk].src
 	plugins.push(new HtmlWebpackPlugin({
 		alwaysWriteToDisk: true,
-		filename: ROOT + '/pages/views/' + map[chunk].tpl + '.html',
-		template: './pages/tpl/' + map[chunk].tpl + '.html',
+		filename: ROOT + '/pages/views/' + map[chunk].tpl,
+		template: './pages/tpl/' + map[chunk].tpl,
 		chunks: ['vendor', chunk]
 	}))
 }
@@ -46,6 +46,13 @@ module.exports = {
 	},
 	externals: {
 		'd3': 'window.d3'
+	},
+	devServer: {
+		proxy: {
+			'/page4.html': {
+				target: 'http://localhost:8000/page4.php'
+			}
+		}
 	},
 	module: {
 		loaders: [

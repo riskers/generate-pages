@@ -1,3 +1,7 @@
+if(ENV == 'DEV') {
+	require('pages/views/page3.html')
+}
+
 /* 
 	使用 ProvidePlugin 就不用 
 	import $ from 'jquery'

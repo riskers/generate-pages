@@ -1,5 +1,3 @@
-地址 https://github.com/fe-config/generate-pages
-
 基于 webpack 的开发多页面项目的脚手架，支持：
 
 * 代码热替换
