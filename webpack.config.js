@@ -6,6 +6,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var map = require('./map')
 var ROOT = path.resolve(__dirname)
 var ENV = process.env.ENV
+var CDN = process.env.CDN
 
 var entry = {
 		'vendor': [
@@ -24,19 +25,19 @@ for (chunk in map) {
 	}))
 }
 
-if(ENV == 'PRO') {
-	plugins.push(new webpack.optimize.UglifyJsPlugin({minimize: true}))	
-}else {
+if(ENV == 'DEV') {
 	plugins.push(new HtmlWebpackHarddiskPlugin())
+}else {
+	plugins.push(new webpack.optimize.UglifyJsPlugin({minimize: true}))	
 }
 
 module.exports = {
-	devtool: ENV=='PRO' ? 'source-map' : 'cheap-eval-source-map',
+	devtool: ENV == 'DEV' ? 'cheap-eval-source-map' : 'source-map',
 	entry: entry,
 	output: {
 		filename: '[name].js',
 		path: path.resolve(__dirname, 'dist'),
-		publicPath: '/dist'
+		publicPath: CDN ? CDN : '/dist'
 	},
 	resolve: {
 		alias: {
