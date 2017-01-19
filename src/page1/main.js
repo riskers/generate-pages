@@ -1,5 +1,5 @@
 if(ENV == 'DEV') {
-	require('pages/views/page1.html')
+	require('pages/html/page1.html')
 }
 
 import './style.css'

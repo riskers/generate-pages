@@ -19,8 +19,8 @@ for (chunk in map) {
 	entry[chunk] = map[chunk].src
 	plugins.push(new HtmlWebpackPlugin({
 		alwaysWriteToDisk: true,
-		filename: ROOT + '/pages/views/' + map[chunk].tpl,
-		template: './pages/tpl/' + map[chunk].tpl,
+		filename: ROOT + '/pages/html/' + map[chunk].tpl,
+		template: ROOT + '/pages/tpl/' + map[chunk].tpl,
 		chunks: ['vendor', chunk]
 	}))
 }

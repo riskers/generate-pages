@@ -1,5 +1,5 @@
 if(ENV == 'DEV') {
-	require('pages/views/page3.html')
+	require('pages/html/page3.html')
 }
 
 /* 
